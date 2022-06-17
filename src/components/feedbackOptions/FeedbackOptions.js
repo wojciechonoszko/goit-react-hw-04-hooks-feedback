@@ -2,30 +2,46 @@ import {React} from 'react';
 import PropTypes from 'prop-types';
 import { ButtonContainer, ButtonList } from './ButtonStyles';
 
-
-const FeedbackOptions = ({options, onLeaveFeedback}) => {
+export default function FeedbackOptions({ options, onLeaveFeedback}) {
     return (
         <>
         <ButtonList>
-        {options.map(option => (
+            {options.map((item) => (
                 <ButtonContainer
-                key={option}
+                key={item}
                 type='button'
-                data-option={option}
-                onClick={onLeaveFeedback}
+                onClick={() => onLeaveFeedback(item)}
                 >
-                    {option}
+                    {item}
                 </ButtonContainer>
             ))}
         </ButtonList>
-            
         </>
     )
 }
+// const FeedbackOptions = ({options, onLeaveFeedback}) => {
+//     return (
+//         <>
+//         <ButtonList>
+//         {options.map(option => (
+//                 <ButtonContainer
+//                 key={option}
+//                 type='button'
+//                 data-option={option}
+//                 onClick={onLeaveFeedback}
+//                 >
+//                     {option}
+//                 </ButtonContainer>
+//             ))}
+//         </ButtonList>
+            
+//         </>
+//     )
+// }
 
 FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired
+    clickGood: PropTypes.func.isRequired
 };
 
-export default FeedbackOptions;
+//export default FeedbackOptions;
