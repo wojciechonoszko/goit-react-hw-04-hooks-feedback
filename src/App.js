@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import {React, Component} from 'react';
+import {React} from 'react';
 import FeedbackOptions from './components/feedbackOptions/FeedbackOptions';
 import Statistic from './components/statistic/Statistic';
 import Notification from './components/notification/Notification';
